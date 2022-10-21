@@ -65,7 +65,7 @@ const Navigation = () => {
           >
             <ul className="items-center justify-center space-y-4 md:flex md:space-x-6 md:space-y-0">
               <li className="text-black dark:text-white">
-                <a href="/data_anggota">Data Anggota</a>
+                <a href="/data_anggota">DATA ANGGOTA</a>
               </li>
               <li>
                 <Menu as="div" className="relative inline-block text-left">
@@ -74,7 +74,7 @@ const Navigation = () => {
                       style={{ border: "none" }}
                       className="inline-flex w-full justify-center rounded-md border text-sm font-medium text-gray-700 dark:text-white"
                     >
-                      Master Buku
+                      MASTER BUKU
                       <ChevronDownIcon
                         className="-mr-1 ml-2 h-5 w-5"
                         aria-hidden="true"
@@ -104,7 +104,7 @@ const Navigation = () => {
                                 "block px-4 py-2 text-sm"
                               )}
                             >
-                              Pengarang
+                              PENGARANG
                             </a>
                           )}
                         </Menu.Item>
@@ -119,7 +119,7 @@ const Navigation = () => {
                                 "block px-4 py-2 text-sm"
                               )}
                             >
-                              Penerbit
+                              PENERBIT
                             </a>
                           )}
                         </Menu.Item>
@@ -134,7 +134,7 @@ const Navigation = () => {
                                 "block px-4 py-2 text-sm"
                               )}
                             >
-                              Buku
+                              BUKU
                             </a>
                           )}
                         </Menu.Item>
@@ -150,7 +150,7 @@ const Navigation = () => {
                       style={{ border: "none" }}
                       className="inline-flex w-full justify-center rounded-md border text-sm font-medium text-gray-700 dark:text-white"
                     >
-                      Transaksi
+                      TRANSAKSI
                       <ChevronDownIcon
                         className="-mr-1 ml-2 h-5 w-5"
                         aria-hidden="true"
@@ -180,7 +180,7 @@ const Navigation = () => {
                                 "block px-4 py-2 text-sm"
                               )}
                             >
-                              Peminjaman
+                              PEMINJAMAN
                             </a>
                           )}
                         </Menu.Item>
@@ -195,7 +195,7 @@ const Navigation = () => {
                                 "block px-4 py-2 text-sm"
                               )}
                             >
-                              Pengembalian
+                              PENGEMBALIAN
                             </a>
                           )}
                         </Menu.Item>
@@ -205,7 +205,7 @@ const Navigation = () => {
                 </Menu>
               </li>
               <li className="text-black dark:text-white">
-                <a href="/tentang">Tentang</a>
+                <a href="/tentang">TENTANG</a>
               </li>
             </ul>
           </div>
