@@ -42,53 +42,36 @@ const ListBooks = () => {
         {books.map((book, index) => {
           return (
             <React.Fragment key={index}>
-              <div className="flex justify-center">
-                <div className="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white border dark:border-gray-700 dark:bg-gray-800 shadow-lg">
-                  <img
-                    className=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg"
-                    src={book.cover}
-                    alt=""
-                  />
-                  <div className="px-4 py-6 md:p-6 flex flex-col justify-start relative">
-                    <div className="mb-14">
-                      <a href="/posts">
-                        <h5 className="text-gray-900 dark:text-white text-xl font-medium mb-2">
-                          Judul: {book.title}
-                        </h5>
-                      </a>
-                      <p className="text-gray-700 dark:text-gray-400 text-xs mb-4">
-                        Pengarang: {book.author}
-                      </p>
-                      <p className="text-gray-700 dark:text-gray-400 text-xs mb-4">
-                        Kategori: {book.category}
-                      </p>
-                      <p className="text-gray-700 dark:text-gray-400 text-xs mb-4">
-                        Penerbit: {book.publisher}
-                      </p>
-                      <p className="text-gray-700 dark:text-gray-400 text-xs mb-4">
-                        Tahun Terbit: {book.year_published}
-                      </p>
-                      <p className="text-gray-700 dark:text-gray-400 text-xs mb-4">
-                        Bahasa: {book.language}
-                      </p>
-                    </div>
-                    {/* <div className="inline-flex ml-4 mb-4 absolute bottom-0 left-0">
-                      <img
-                        className="rounded-full w-9 h-9 mr-3"
-                        src="https://armandwipangestu.vercel.app/static/media/me.07f08a71dc0b0a340041.png"
-                        alt="Avatar"
-                      />
-                      <div className="block">
-                        <h3 className="text-xs mb-1 dark:text-white">Arman</h3>
-                        <p className="text-xs text-gray-400">11 Nov 2022</p>
-                      </div>
-                    </div>
-                    <div className="absolute right-0 bottom-0 mr-5 mb-4 dark:text-white">
-                      <FontAwesomeIcon icon={farBookmark} />
-                    </div> */}
-                  </div>
+              <a
+                href=""
+                class="flex flex-col bg-white rounded-md border md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+              >
+                <img
+                  class="object-cover w-full h-100 md:h-100 md:w-56"
+                  src={book.cover}
+                  alt=""
+                />
+                <div class="flex flex-col p-5 leading-normal">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-800 dark:text-white">
+                    {book.title}
+                  </h5>
+                  <p class="font-normal text-sm text-gray-500 dark:text-gray-400 mb-2">
+                    Pengarang: {book.author}
+                  </p>
+                  <p class="font-normal text-sm text-gray-500 dark:text-gray-400 mb-2">
+                    Kategori: {book.category}
+                  </p>
+                  <p class="font-normal text-sm text-gray-500 dark:text-gray-400 mb-2">
+                    Tahun Terbit: {book.year_published}
+                  </p>
+                  <p class="font-normal text-sm text-gray-500 dark:text-gray-400 mb-2">
+                    Penerbit: {book.publisher}
+                  </p>
+                  <p class="font-normal text-sm text-gray-500 dark:text-gray-400 mb-2">
+                    Bahasa: {book.language}
+                  </p>
                 </div>
-              </div>
+              </a>
             </React.Fragment>
           );
         })}
