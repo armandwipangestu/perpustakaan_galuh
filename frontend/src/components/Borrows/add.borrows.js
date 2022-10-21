@@ -1,14 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+// import Select from "react-select";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const LoanBook = () => {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
+  const [borrow_book_title, setBorrow_book_title] = useState("");
   const [borrowing_date, setBorrowing_date] = useState("");
   const [return_date, setReturn_date] = useState("");
   const [status, setStatus] = useState("");
   const navigate = useNavigate();
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    getBooks();
+  }, []);
+
+  const getBooks = async () => {
+    const response = await axios.get("http://192.168.124.125:5000/api/books");
+    setBooks(response.data);
+  };
+
+  const handleChange = (event) => {
+    setBorrow_book_title(event.target.value);
+  };
 
   const saveLoan = async (e) => {
     e.preventDefault();
@@ -16,6 +32,7 @@ const LoanBook = () => {
       await axios.post("http://192.168.124.125:5000/api/loans", {
         name,
         number,
+        borrow_book_title,
         borrowing_date,
         return_date,
         status,
@@ -33,7 +50,7 @@ const LoanBook = () => {
           <div className="grid gap-6 md:grid-cols-2">
             <div>
               <label
-                for="nama"
+                htmlFor="nama"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Nama
@@ -49,7 +66,7 @@ const LoanBook = () => {
             </div>
             <div>
               <label
-                for="nomer"
+                htmlFor="nomer"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Nomer
@@ -63,9 +80,53 @@ const LoanBook = () => {
                 onChange={(e) => setNumber(e.target.value)}
               ></textarea>
             </div>
+            {/* <div>
+              <label
+                htmlFor="judul_buku_dipinjam"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >
+                Buku
+              </label>
+              <textarea
+                type="text"
+                id="judul_buku_dipinjam"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                required=""
+                value={borrow_book_title}
+                onChange={(e) => setBorrow_book_title(e.target.value)}
+              ></textarea>
+            </div> */}
             <div>
               <label
-                for="tanggal_meminjam"
+                htmlFor="book"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+              >
+                Buku
+              </label>
+              <select
+                value={borrow_book_title}
+                label="Buku"
+                onChange={handleChange}
+                id="countries"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              >
+                {books.map((book, index) => {
+                  return (
+                    <React.Fragment key={index}>
+                      <option value={book.title}>{book.title}</option>
+                    </React.Fragment>
+                  );
+                })}
+                {/* <option selected>Choose a country</option>
+                <option value="US">United States</option>
+                <option value="CA">Canada</option>
+                <option value="FR">France</option>
+                <option value="DE">Germany</option> */}
+              </select>
+            </div>
+            <div>
+              <label
+                htmlFor="tanggal_meminjam"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Tanggal Meminjam
@@ -81,7 +142,7 @@ const LoanBook = () => {
             </div>
             <div>
               <label
-                for="tanggal_mengembalikan"
+                htmlFor="tanggal_mengembalikan"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Tanggal Mengembalikan
@@ -97,7 +158,7 @@ const LoanBook = () => {
             </div>
             <div>
               <label
-                for="status"
+                htmlFor="status"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Status
