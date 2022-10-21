@@ -9,7 +9,7 @@ export const getPengarangs = async (req, res) => {
   }
 };
 
-export const getPengaraById = async (req, res) => {
+export const getPengarangById = async (req, res) => {
   try {
     const response = await Pengarang.findOne({
       where: {
