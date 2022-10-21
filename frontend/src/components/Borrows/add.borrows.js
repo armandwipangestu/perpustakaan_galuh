@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-// import Select from "react-select";
+import DatePicker from "react-datepicker";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "react-datepicker/dist/react-datepicker.css";
 
 const LoanBook = () => {
   const [name, setName] = useState("");
@@ -12,6 +13,7 @@ const LoanBook = () => {
   const [status, setStatus] = useState("");
   const navigate = useNavigate();
   const [books, setBooks] = useState([]);
+  const [startDate, setStartDate] = useState(new Date());
 
   useEffect(() => {
     getBooks();
@@ -82,22 +84,6 @@ const LoanBook = () => {
                 onChange={(e) => setNumber(e.target.value)}
               ></textarea>
             </div>
-            {/* <div>
-              <label
-                htmlFor="judul_buku_dipinjam"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >
-                Buku
-              </label>
-              <textarea
-                type="text"
-                id="judul_buku_dipinjam"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                required=""
-                value={borrow_book_title}
-                onChange={(e) => setBorrow_book_title(e.target.value)}
-              ></textarea>
-            </div> */}
             <div>
               <label
                 htmlFor="book"
@@ -119,11 +105,6 @@ const LoanBook = () => {
                     </React.Fragment>
                   );
                 })}
-                {/* <option selected>Choose a country</option>
-                <option value="US">United States</option>
-                <option value="CA">Canada</option>
-                <option value="FR">France</option>
-                <option value="DE">Germany</option> */}
               </select>
             </div>
             <div>
@@ -133,14 +114,19 @@ const LoanBook = () => {
               >
                 Tanggal Meminjam
               </label>
-              <textarea
+              <DatePicker
+                selected={startDate}
+                onChange={(date) => setStartDate(date)}
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              />
+              {/* <textarea
                 type="text"
                 id="tanggal_meminjam"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 required=""
                 value={borrowing_date}
                 onChange={(e) => setBorrowing_date(e.target.value)}
-              ></textarea>
+              ></textarea> */}
             </div>
             <div>
               <label
