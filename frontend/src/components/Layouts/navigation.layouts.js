@@ -93,7 +93,7 @@ const Navigation = () => {
                         <Menu.Item>
                           {({ active }) => (
                             <a
-                              href="#"
+                              href="/data_pengarang"
                               className={classNames(
                                 active
                                   ? "bg-gray-100 text-gray-900"
@@ -108,7 +108,7 @@ const Navigation = () => {
                         <Menu.Item>
                           {({ active }) => (
                             <a
-                              href="#"
+                              href="/daftar_penerbit"
                               className={classNames(
                                 active
                                   ? "bg-gray-100 text-gray-900"
@@ -123,7 +123,7 @@ const Navigation = () => {
                         <Menu.Item>
                           {({ active }) => (
                             <a
-                              href="#"
+                              href="/daftar_buku"
                               className={classNames(
                                 active
                                   ? "bg-gray-100 text-gray-900"
