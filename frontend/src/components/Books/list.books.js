@@ -54,30 +54,30 @@ const ListBooks = () => {
             <React.Fragment key={index}>
               <a
                 href=""
-                class="flex flex-col bg-white rounded-md border md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+                className="flex flex-col bg-white rounded-md border md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
               >
                 <img
-                  class="object-cover w-full h-100 md:h-100 md:w-56"
+                  className="object-cover w-full h-100 md:h-100 md:w-56"
                   src={book.cover}
                   alt=""
                 />
-                <div class="flex flex-col p-5 leading-normal">
-                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-800 dark:text-white">
+                <div className="flex flex-col p-5 leading-normal">
+                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-800 dark:text-white">
                     {book.title}
                   </h5>
-                  <p class="font-normal text-sm text-gray-500 dark:text-gray-400 mb-2">
+                  <p className="font-normal text-sm text-gray-500 dark:text-gray-400 mb-2">
                     Pengarang: {book.author}
                   </p>
-                  <p class="font-normal text-sm text-gray-500 dark:text-gray-400 mb-2">
+                  <p className="font-normal text-sm text-gray-500 dark:text-gray-400 mb-2">
                     Kategori: {book.category}
                   </p>
-                  <p class="font-normal text-sm text-gray-500 dark:text-gray-400 mb-2">
+                  <p className="font-normal text-sm text-gray-500 dark:text-gray-400 mb-2">
                     Tahun Terbit: {book.year_published}
                   </p>
-                  <p class="font-normal text-sm text-gray-500 dark:text-gray-400 mb-2">
+                  <p className="font-normal text-sm text-gray-500 dark:text-gray-400 mb-2">
                     Penerbit: {book.publisher}
                   </p>
-                  <p class="font-normal text-sm text-gray-500 dark:text-gray-400 mb-2">
+                  <p className="font-normal text-sm text-gray-500 dark:text-gray-400 mb-2">
                     Bahasa: {book.language}
                   </p>
                 </div>

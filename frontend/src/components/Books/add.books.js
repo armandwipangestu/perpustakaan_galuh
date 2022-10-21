@@ -37,7 +37,7 @@ const AddBook = () => {
           <div className="grid gap-6 md:grid-cols-2">
             <div>
               <label
-                for="judul"
+                htmlFor="judul"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Judul
@@ -53,7 +53,7 @@ const AddBook = () => {
             </div>
             <div>
               <label
-                for="pengarang"
+                htmlFor="pengarang"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Pengarang
@@ -69,7 +69,7 @@ const AddBook = () => {
             </div>
             <div>
               <label
-                for="cover"
+                htmlFor="cover"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Cover
@@ -88,7 +88,7 @@ const AddBook = () => {
             </div>
             <div>
               <label
-                for="kategori"
+                htmlFor="kategori"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Kategori
@@ -104,7 +104,7 @@ const AddBook = () => {
             </div>
             <div>
               <label
-                for="tahun_terbit"
+                htmlFor="tahun_terbit"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Tahun Terbit
@@ -120,7 +120,7 @@ const AddBook = () => {
             </div>
             <div>
               <label
-                for="penerbit"
+                htmlFor="penerbit"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Penerbit
@@ -136,7 +136,7 @@ const AddBook = () => {
             </div>
             <div>
               <label
-                for="bahasa"
+                htmlFor="bahasa"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Bahasa
