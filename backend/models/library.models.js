@@ -6,13 +6,13 @@ const { DataTypes } = Sequelize;
 const LibraryBooks = DatabaseConnection.define(
   "books",
   {
-    title: DataTypes.STRING,
-    author: DataTypes.STRING,
+    title: DataTypes.TEXT,
+    author: DataTypes.TEXT,
     cover: DataTypes.TEXT,
-    category: DataTypes.STRING,
-    year_published: DataTypes.INTEGER(4),
-    publisher: DataTypes.STRING,
-    language: DataTypes.STRING,
+    category: DataTypes.TEXT,
+    year_published: DataTypes.TEXT,
+    publisher: DataTypes.TEXT,
+    language: DataTypes.TEXT,
   },
   {
     freezeTableName: true,
