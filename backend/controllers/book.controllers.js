@@ -17,7 +17,9 @@ export const getBookById = async (req, res) => {
       },
     });
     res.status(200).json(response);
-  } catch (error) {}
+  } catch (error) {
+    console.log(error.message);
+  }
 };
 
 export const createBook = async (req, res) => {
