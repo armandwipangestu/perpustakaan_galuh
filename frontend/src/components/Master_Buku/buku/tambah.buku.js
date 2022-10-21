@@ -6,16 +6,18 @@ const TambahBuku = () => {
   const [id_buku, setId_buku] = useState("");
   const [judul_buku, setJudul_buku] = useState("");
   const [pengarang, setPengarang] = useState("");
-  const [penertbit, setPenerbit] = useState("");
+  const [penerbit, setPenerbit] = useState("");
   const [tahun_terbit, setTahun_terbit] = useState("");
   const [gambar, setGambar] = useState("");
   const [bahasa, setBahasa] = useState("");
 
   const navigate = useNavigate();
   const [getPengarangs, setPengarangs] = useState([]);
+  const [getPenerbits, setPenerbits] = useState([]);
 
   useEffect(() => {
     findPengarang();
+    findPenerbit();
   }, []);
 
   const findPengarang = async () => {
@@ -25,6 +27,15 @@ const TambahBuku = () => {
     setPengarangs(response.data);
   };
 
+  const findPenerbit = async () => {
+    const response = await axios.get(
+      `${process.env.REACT_APP_BASEURL}/api/penerbits`
+    );
+    setPenerbits(response.data);
+  };
+
+  console.log(getPenerbits);
+
   const saveBuku = async (e) => {
     e.preventDefault();
     try {
@@ -32,6 +43,7 @@ const TambahBuku = () => {
         id_buku,
         judul_buku,
         pengarang,
+        penerbit,
       });
       navigate("/data_buku");
     } catch (error) {
@@ -39,8 +51,12 @@ const TambahBuku = () => {
     }
   };
 
-  const handleChange = (event) => {
+  const handleChangePengarang = (event) => {
     setPengarang(event.target.value);
+  };
+
+  const handleChangePenerbit = (event) => {
+    setPenerbit(event.target.value);
   };
 
   return (
@@ -90,7 +106,7 @@ const TambahBuku = () => {
               <select
                 value={pengarang}
                 label="Pengarang"
-                onChange={handleChange}
+                onChange={handleChangePengarang}
                 id="countries"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >
@@ -99,6 +115,31 @@ const TambahBuku = () => {
                     <React.Fragment key={index}>
                       <option value={getPengarang.pengarang}>
                         {getPengarang.pengarang}
+                      </option>
+                    </React.Fragment>
+                  );
+                })}
+              </select>
+            </div>
+            <div>
+              <label
+                htmlFor="penerbit"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+              >
+                Penerbit
+              </label>
+              <select
+                value={penerbit}
+                label="Penerbit"
+                onChange={handleChangePenerbit}
+                id="countries"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              >
+                {getPenerbits.map((getPenerbit, index) => {
+                  return (
+                    <React.Fragment key={index}>
+                      <option value={getPenerbit.penerbit}>
+                        {getPenerbit.penerbit}
                       </option>
                     </React.Fragment>
                   );

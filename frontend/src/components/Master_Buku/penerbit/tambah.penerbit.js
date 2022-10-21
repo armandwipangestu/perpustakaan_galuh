@@ -9,7 +9,7 @@ const TambahPenerbit = () => {
   const savePenerbit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${process.env.REACT_APP_BASEURL}/api/books`, {
+      await axios.post(`${process.env.REACT_APP_BASEURL}/api/penerbits`, {
         penerbit,
       });
       navigate("/data_penerbit");
