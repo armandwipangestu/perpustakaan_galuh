@@ -15,7 +15,7 @@ const AddBook = () => {
   const saveBook = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`http://192.168.124.125:5000/api/books`, {
+      await axios.get("http://192.168.124.125:5000/api/books", {
         title,
         author,
         cover,
@@ -31,20 +31,20 @@ const AddBook = () => {
   };
 
   return (
-    <section id="add_book">
+    <section id="add_post">
       <form onSubmit={saveBook}>
-        <div className="px-5 py-2.5 md:px-32 lg:px-28 mb-10">
+        <div className="px-5 py-2.5 md:px-16 mb-10">
           <div className="grid gap-6 md:grid-cols-2">
             <div>
               <label
-                for="judul"
+                htmlFor="title"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Judul
               </label>
               <textarea
                 type="text"
-                id="judul"
+                id="title"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 required=""
                 value={title}
@@ -53,14 +53,14 @@ const AddBook = () => {
             </div>
             <div>
               <label
-                for="pengarang"
+                htmlFor="author"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Pengarang
               </label>
               <textarea
                 type="text"
-                id="pengarang"
+                id="author"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 required=""
                 value={author}
@@ -69,7 +69,7 @@ const AddBook = () => {
             </div>
             <div>
               <label
-                for="cover"
+                htmlFor="cover"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Cover
@@ -85,14 +85,14 @@ const AddBook = () => {
             </div>
             <div>
               <label
-                for="kategori"
+                htmlFor="category"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
-                Kategory
+                Category
               </label>
               <textarea
                 type="text"
-                id="kategori"
+                id="category"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 required=""
                 value={category}
@@ -101,14 +101,14 @@ const AddBook = () => {
             </div>
             <div>
               <label
-                for="tahun_terbit"
+                htmlFor="year_published"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Tahun Terbit
               </label>
               <textarea
                 type="text"
-                id="tahun_terbit"
+                id="year_published"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 required=""
                 value={year_published}
@@ -117,14 +117,15 @@ const AddBook = () => {
             </div>
             <div>
               <label
-                for="penerbit"
+                htmlFor="publisher"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Penerbit
               </label>
               <textarea
                 type="text"
-                id="penerbit"
+                rows="5"
+                id="publisher"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 required=""
                 value={publisher}
@@ -133,14 +134,15 @@ const AddBook = () => {
             </div>
             <div>
               <label
-                for="bahasa"
+                htmlFor="language"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Bahasa
               </label>
               <textarea
                 type="text"
-                id="bahasa"
+                rows="5"
+                id="language"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 required=""
                 value={language}
@@ -152,7 +154,7 @@ const AddBook = () => {
             type="submit"
             className="mt-5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
-            Submit
+            Tambahkan
           </button>
         </div>
       </form>
