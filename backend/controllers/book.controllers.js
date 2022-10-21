@@ -1,4 +1,4 @@
-import LibraryBooks from "../models/library.models.js";
+import LibraryBooks from "../models/book.models.js";
 
 export const getBooks = async (req, res) => {
   try {
