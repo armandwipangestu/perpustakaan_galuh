@@ -74,6 +74,9 @@ const AddBook = () => {
               >
                 Cover
               </label>
+              <p className="text-gray-700 text-sm">
+                Masukan link gambar, contoh: google.com/cover.png
+              </p>
               <textarea
                 type="text"
                 id="cover"

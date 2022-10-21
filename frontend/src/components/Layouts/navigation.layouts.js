@@ -66,7 +66,7 @@ const Navigation = () => {
               </li>
             </ul>
 
-            <div className="mt-4 space-y-2 lg:hidden md:inline-block">
+            <div className="mt-4 space-y-2 md:hidden md:inline-block">
               <input
                 type="text"
                 id="search-navbar"
