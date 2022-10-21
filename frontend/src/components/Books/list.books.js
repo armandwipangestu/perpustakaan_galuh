@@ -25,24 +25,6 @@ const ListBooks = () => {
         <p className="text-1xl text-gray-700 dark:text-gray-400 mt-3">
           Developer Test
         </p>
-        <div className="mt-3">
-          <Link to={`/tambah_buku`}>
-            <button
-              type="button"
-              className="md:mr-5 mb-5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Tambahkan Buku
-            </button>
-          </Link>
-          <Link to={`/pinjam_buku`}>
-            <button
-              type="button"
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Buat Pinjaman Buku
-            </button>
-          </Link>
-        </div>
       </div>
       <div className="mb-5 mt-5">
         <h1 className="text-2xl dark:text-white">Daftar Buku</h1>
@@ -57,28 +39,28 @@ const ListBooks = () => {
                 className="flex flex-col bg-white rounded-md border md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
               >
                 <img
-                  className="object-cover w-full h-100 md:h-100 md:w-56"
-                  src={book.cover}
+                  className="object-cover w-full h-100 md:h-100 md:w-56 rounded"
+                  src={book.gambar}
                   alt=""
                 />
                 <div className="flex flex-col p-5 leading-normal">
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-800 dark:text-white">
-                    {book.title}
+                    {book.judul_buku}
                   </h5>
                   <p className="font-normal text-sm text-gray-500 dark:text-gray-400 mb-2">
-                    Pengarang: {book.author}
+                    ID Buku: {book.id_buku}
                   </p>
                   <p className="font-normal text-sm text-gray-500 dark:text-gray-400 mb-2">
-                    Kategori: {book.category}
+                    Pengarang: {book.pengarang}
                   </p>
                   <p className="font-normal text-sm text-gray-500 dark:text-gray-400 mb-2">
-                    Tahun Terbit: {book.year_published}
+                    Penerbit: {book.penerbit}
                   </p>
                   <p className="font-normal text-sm text-gray-500 dark:text-gray-400 mb-2">
-                    Penerbit: {book.publisher}
+                    Tahun Terbit: {book.tahun_terbit}
                   </p>
                   <p className="font-normal text-sm text-gray-500 dark:text-gray-400 mb-2">
-                    Bahasa: {book.language}
+                    Bahasa: {book.bahasa}
                   </p>
                 </div>
               </a>
