@@ -70,7 +70,10 @@ const Navigation = () => {
               <li>
                 <Menu as="div" className="relative inline-block text-left">
                   <div>
-                    <Menu.Button className="inline-flex w-full justify-center rounded-md border px-4 py-2 text-sm font-medium text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100 dark:text-white">
+                    <Menu.Button
+                      style={{ border: "none" }}
+                      className="inline-flex w-full justify-center rounded-md border text-sm font-medium text-gray-700 dark:text-white"
+                    >
                       Master Buku
                       <ChevronDownIcon
                         className="-mr-1 ml-2 h-5 w-5"
@@ -143,7 +146,10 @@ const Navigation = () => {
               <li>
                 <Menu as="div" className="relative inline-block text-left">
                   <div>
-                    <Menu.Button className="inline-flex w-full justify-center rounded-md border px-4 py-2 text-sm font-medium text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100 dark:text-white">
+                    <Menu.Button
+                      style={{ border: "none" }}
+                      className="inline-flex w-full justify-center rounded-md border text-sm font-medium text-gray-700 dark:text-white"
+                    >
                       Transaksi
                       <ChevronDownIcon
                         className="-mr-1 ml-2 h-5 w-5"
@@ -202,26 +208,8 @@ const Navigation = () => {
                 <a href="/tentang">Tentang</a>
               </li>
             </ul>
-
-            {/* md:inline-block */}
-            {/* <div className="mt-4 space-y-2 md:hidden">
-              <input
-                type="text"
-                id="search-navbar"
-                className="block p-2 pl-5 w-full text-gray-900 bg-gray-50 rounded-full border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Search..."
-              />
-            </div> */}
           </div>
         </div>
-        {/* <div className="hidden space-x-2 md:inline-block">
-          <input
-            type="text"
-            id="search-navbar"
-            className="block p-2 pl-5 w-full text-gray-900 bg-gray-50 rounded-full border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Search..."
-          />
-        </div> */}
       </div>
     </nav>
   );
