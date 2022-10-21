@@ -8,6 +8,7 @@ const LibraryBooks = DatabaseConnection.define(
   {
     title: DataTypes.STRING,
     author: DataTypes.STRING,
+    cover: DataTypes.TEXT,
     category: DataTypes.STRING,
     year_published: DataTypes.INTEGER(4),
     publisher: DataTypes.STRING,
