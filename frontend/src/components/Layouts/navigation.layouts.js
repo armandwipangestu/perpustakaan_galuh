@@ -62,6 +62,9 @@ const Navigation = () => {
                 <a href="/">Beranda</a>
               </li>
               <li className="text-black dark:text-white">
+                <a href="/daftar_pinjaman">Daftar Pinjaman</a>
+              </li>
+              <li className="text-black dark:text-white">
                 <a href="/tentang">Tentang</a>
               </li>
             </ul>

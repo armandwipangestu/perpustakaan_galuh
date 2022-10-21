@@ -1,17 +1,17 @@
-import LoanBooks from "../models/loan.models.js";
+import BorrowBooks from "../models/borrow.models.js";
 
-export const getLoans = async (req, res) => {
+export const getBorrows = async (req, res) => {
   try {
-    const response = await LoanBooks.findAll();
+    const response = await BorrowBooks.findAll();
     res.status(200).json(response);
   } catch (error) {
     console.log(error.message);
   }
 };
 
-export const getLoanById = async (req, res) => {
+export const getBorrowById = async (req, res) => {
   try {
-    const response = await LoanBooks.findOne({
+    const response = await BorrowBooks.findOne({
       where: {
         id: req.params.id,
       },
@@ -22,18 +22,18 @@ export const getLoanById = async (req, res) => {
   }
 };
 
-export const createLoan = async (req, res) => {
+export const createBorrow = async (req, res) => {
   try {
-    await LoanBooks.create(req.body);
+    await BorrowBooks.create(req.body);
     res.status(201).json({ message: "Loan Added" });
   } catch (error) {
     console.log(error.message);
   }
 };
 
-export const updateLoan = async (req, res) => {
+export const updateBorrow = async (req, res) => {
   try {
-    await LoanBooks.update(req.body, {
+    await BorrowBooks.update(req.body, {
       where: {
         id: req.params.id,
       },
@@ -44,9 +44,9 @@ export const updateLoan = async (req, res) => {
   }
 };
 
-export const deleteLoan = async (req, res) => {
+export const deleteBorrow = async (req, res) => {
   try {
-    await LoanBooks.destroy({
+    await BorrowBooks.destroy({
       where: {
         id: req.params.id,
       },

@@ -3,11 +3,12 @@ import DatabaseConnection from "../config/database.config.js";
 
 const { DataTypes } = Sequelize;
 
-const LoansBook = DatabaseConnection.define(
-  "loans",
+const BorrowsBook = DatabaseConnection.define(
+  "borrows",
   {
     name: DataTypes.STRING,
     number: DataTypes.INTEGER,
+    borrow_book_title: DataTypes.STRING,
     borrowing_date: DataTypes.DATE,
     return_date: DataTypes.DATE,
     status: DataTypes.BOOLEAN,
@@ -17,7 +18,7 @@ const LoansBook = DatabaseConnection.define(
   }
 );
 
-export default LoansBook;
+export default BorrowsBook;
 
 (async () => {
   await DatabaseConnection.sync();
