@@ -12,7 +12,9 @@ const ListBooks = () => {
   }, []);
 
   const getBooks = async () => {
-    const response = await axios.get("http://192.168.124.125:5000/api/books");
+    const response = await axios.get(
+      `${process.env.REACT_APP_BASEURL}/api/books`
+    );
     setBooks(response.data);
   };
 

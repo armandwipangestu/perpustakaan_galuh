@@ -9,7 +9,9 @@ const ListBorrow = () => {
   }, []);
 
   const getBorrows = async () => {
-    const response = await axios.get("http://192.168.124.125:5000/api/loans");
+    const response = await axios.get(
+      `${process.env.REACT_APP_BASEURL}/api/loans`
+    );
     setBorrows(response.data);
   };
 

@@ -18,7 +18,9 @@ const LoanBook = () => {
   }, []);
 
   const getBooks = async () => {
-    const response = await axios.get("http://192.168.124.125:5000/api/books");
+    const response = await axios.get(
+      `${process.env.REACT_APP_BASEURL}/api/books`
+    );
     setBooks(response.data);
   };
 
@@ -29,7 +31,7 @@ const LoanBook = () => {
   const saveLoan = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://192.168.124.125:5000/api/loans", {
+      await axios.post(`${process.env.REACT_APP_BASEURL}/api/loans`, {
         name,
         number,
         borrow_book_title,

@@ -15,7 +15,7 @@ const AddBook = () => {
   const saveBook = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`http://192.168.124.125:5000/api/books`, {
+      await axios.post(`${process.env.REACT_APP_BASEURL}/api/books`, {
         title,
         author,
         cover,
