@@ -53,20 +53,20 @@ const Navigation = () => {
         </div>
         <div>
           <div
-            className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
+            className={`flex-1 justify-self-center pb-3 mt-2 md:block md:pb-0 md:mt-0 ${
               navbar ? "block" : "hidden"
             }`}
           >
-            <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+            <ul className="items-center justify-center space-y-4 md:flex md:space-x-6 md:space-y-0">
               <li className="text-black dark:text-white">
-                <a href="">Home</a>
+                <a href="/">Beranda</a>
               </li>
               <li className="text-black dark:text-white">
-                <a href="">About</a>
+                <a href="/tentang">Tentang</a>
               </li>
             </ul>
 
-            <div className="mt-3 space-y-2 lg:hidden md:inline-block">
+            <div className="mt-4 space-y-2 lg:hidden md:inline-block">
               <input
                 type="text"
                 id="search-navbar"
