@@ -10,7 +10,9 @@ import DataPengarang from "./components/Master_Buku/pengarang/daftar.pengarang";
 import TambahPengarang from "./components/Master_Buku/pengarang/tambah.pengarang";
 import DataPenerbit from "./components/Master_Buku/penerbit/daftar.penerbit";
 import TambahPenerbit from "./components/Master_Buku/penerbit/tambah.penerbit";
-import AddBook from "./components/Books/add.books";
+import DataBuku from "./components/Master_Buku/buku/daftar.buku";
+import TambahBuku from "./components/Master_Buku/buku/tambah.buku";
+// import AddBook from "./components/Books/add.books";
 import LoanBook from "./components/Borrows/add.borrows";
 import ListBorrow from "./components/Borrows/list.borrows";
 
@@ -21,7 +23,7 @@ const App = () => {
         <Navigation />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/tambah_buku" element={<AddBook />} />
+          {/* <Route path="/tambah_buku" element={<AddBook />} /> */}
           <Route path="/pinjam_buku" element={<LoanBook />} />
           <Route path="/data_anggota" element={<DataAnggota />} />
           <Route path="/tambah_anggota" element={<TambahAnggota />} />
@@ -29,6 +31,8 @@ const App = () => {
           <Route path="/tambah_pengarang" element={<TambahPengarang />} />
           <Route path="/data_penerbit" element={<DataPenerbit />} />
           <Route path="/tambah_penerbit" element={<TambahPenerbit />} />
+          <Route path="/data_buku" element={<DataBuku />} />
+          <Route path="/tambah_buku" element={<TambahBuku />} />
         </Routes>
         <Footer />
       </BrowserRouter>

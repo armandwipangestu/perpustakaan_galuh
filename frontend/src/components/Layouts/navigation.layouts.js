@@ -123,7 +123,7 @@ const Navigation = () => {
                         <Menu.Item>
                           {({ active }) => (
                             <a
-                              href="/daftar_buku"
+                              href="/data_buku"
                               className={classNames(
                                 active
                                   ? "bg-gray-100 text-gray-900"
