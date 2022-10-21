@@ -1,13 +1,15 @@
 import express from "express";
 import cors from "cors";
-import BookRoute from "./routes/book.routes.js";
-import BorrowRoute from "./routes/borrow.routes.js";
+import BukuRoute from "./routes/buku.routes.js";
+import PeminjamRoute from "./routes/peminjam.routes.js";
+import AnggotaRoute from "./routes/anggota.routes.js";
 
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use(BookRoute);
-app.use(BorrowRoute);
+app.use(BukuRoute);
+app.use(PeminjamRoute);
+app.use(AnggotaRoute);
 
 app.listen(5000, () => {
   console.log("Server up and running on localhost:5000");

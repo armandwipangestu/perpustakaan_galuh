@@ -1,8 +1,8 @@
-import LibraryBooks from "../models/book.models.js";
+import Buku from "../models/buku.models.js";
 
 export const getBooks = async (req, res) => {
   try {
-    const response = await LibraryBooks.findAll();
+    const response = await Buku.findAll();
     res.status(200).json(response);
   } catch (error) {
     console.log(error.message);
@@ -11,7 +11,7 @@ export const getBooks = async (req, res) => {
 
 export const getBookById = async (req, res) => {
   try {
-    const response = await LibraryBooks.findOne({
+    const response = await Buku.findOne({
       where: {
         id: req.params.id,
       },
@@ -24,7 +24,7 @@ export const getBookById = async (req, res) => {
 
 export const createBook = async (req, res) => {
   try {
-    await LibraryBooks.create(req.body);
+    await Buku.create(req.body);
     res.status(201).json({ message: "Book Added" });
   } catch (error) {
     console.log(error.message);
@@ -33,7 +33,7 @@ export const createBook = async (req, res) => {
 
 export const updateBook = async (req, res) => {
   try {
-    await LibraryBooks.update(req.body, {
+    await Buku.update(req.body, {
       where: {
         id: req.params.id,
       },
@@ -46,7 +46,7 @@ export const updateBook = async (req, res) => {
 
 export const deleteBook = async (req, res) => {
   try {
-    await LibraryBooks.destroy({
+    await Buku.destroy({
       where: {
         id: req.params.id,
       },

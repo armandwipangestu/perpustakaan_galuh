@@ -5,7 +5,7 @@ import {
   createBook,
   updateBook,
   deleteBook,
-} from "../controllers/book.controllers.js";
+} from "../controllers/buku.controllers.js";
 
 const router = express.Router();
 
