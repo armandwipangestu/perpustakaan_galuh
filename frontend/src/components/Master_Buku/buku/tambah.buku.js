@@ -20,7 +20,7 @@ const TambahBuku = () => {
 
   const findPengarang = async () => {
     const response = await axios.get(
-      `${process.env.REACT_APP_BASEURL}/api/books`
+      `${process.env.REACT_APP_BASEURL}/api/pengarangs`
     );
     setPengarangs(response.data);
   };
