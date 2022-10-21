@@ -75,7 +75,9 @@ const DataBuku = () => {
                       <td className="py-4 px-6">{buku.pengarang}</td>
                       <td className="py-4 px-6">{buku.penerbit}</td>
                       <td className="py-4 px-6">{buku.tahun_terbit}</td>
-                      <td className="py-4 px-6">{buku.gambar}</td>
+                      <td className="py-4 px-6">
+                        <img src={buku.gambar} className="md:w-40 md:h-48" />
+                      </td>
                       <td className="py-4 px-6">{buku.bahasa}</td>
                     </tr>
                   </React.Fragment>
