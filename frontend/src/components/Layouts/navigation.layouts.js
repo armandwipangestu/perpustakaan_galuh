@@ -108,7 +108,7 @@ const Navigation = () => {
                         <Menu.Item>
                           {({ active }) => (
                             <a
-                              href="/daftar_penerbit"
+                              href="/data_penerbit"
                               className={classNames(
                                 active
                                   ? "bg-gray-100 text-gray-900"

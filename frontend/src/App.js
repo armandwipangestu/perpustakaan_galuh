@@ -8,6 +8,8 @@ import DataAnggota from "./components/Anggota/daftar.anggota";
 import TambahAnggota from "./components/Anggota/tambah2.anggota";
 import DataPengarang from "./components/Master_Buku/pengarang/daftar.pengarang";
 import TambahPengarang from "./components/Master_Buku/pengarang/tambah.pengarang";
+import DataPenerbit from "./components/Master_Buku/penerbit/daftar.penerbit";
+import TambahPenerbit from "./components/Master_Buku/penerbit/tambah.penerbit";
 import AddBook from "./components/Books/add.books";
 import LoanBook from "./components/Borrows/add.borrows";
 import ListBorrow from "./components/Borrows/list.borrows";
@@ -25,6 +27,8 @@ const App = () => {
           <Route path="/tambah_anggota" element={<TambahAnggota />} />
           <Route path="/data_pengarang" element={<DataPengarang />} />
           <Route path="/tambah_pengarang" element={<TambahPengarang />} />
+          <Route path="/data_penerbit" element={<DataPenerbit />} />
+          <Route path="/tambah_penerbit" element={<TambahPenerbit />} />
         </Routes>
         <Footer />
       </BrowserRouter>
