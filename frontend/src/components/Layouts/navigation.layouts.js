@@ -8,7 +8,7 @@ const Navigation = () => {
       <div className="justify-between px-1 mx-auto lg:max-w-7xl md:items-center md:flex md:px-5">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <a href="">
+            <a href="/">
               <h2 className="text-2xl font-bold text-black dark:text-white">
                 PERPUSTAKAAN GALUH
               </h2>
