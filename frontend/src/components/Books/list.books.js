@@ -27,7 +27,7 @@ const ListBooks = () => {
           Developer Test
         </p>
       </div>
-      <div className="mb-5 mt-5 flex flex-wrap md:flex-nowrap">
+      <div className="mb-5 mt-5">
         <div>
           <h1 className="text-2xl dark:text-white">Daftar Buku</h1>
           <hr className="mt-3" />
