@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const DataPenerbit = () => {
   const [penerbits, setPenerbits] = useState([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     getPenerbits();
@@ -14,6 +15,15 @@ const DataPenerbit = () => {
       `${process.env.REACT_APP_BASEURL}/api/penerbits`
     );
     setPenerbits(response.data);
+  };
+
+  const deletePenerbit = async (id) => {
+    try {
+      axios.delete(`${process.env.REACT_APP_BASEURL}/api/penerbits/${id}`);
+      getPenerbits();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -30,6 +40,15 @@ const DataPenerbit = () => {
               Tambah Penerbit
             </button>
           </Link>
+          <input
+            type="text"
+            id="search-book"
+            className="p-2 pl-5 w-full text-gray-900 bg-gray-50 rounded-md border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Search..."
+            onChange={(e) => {
+              setSearch(e.target.value);
+            }}
+          />
         </div>
       </section>
       <section id="daftar_penerbit">
@@ -46,21 +65,51 @@ const DataPenerbit = () => {
               </tr>
             </thead>
             <tbody>
-              {penerbits.map((penerbits, index) => {
-                return (
-                  <React.Fragment key={index}>
-                    <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                      <th
-                        scope="row"
-                        className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                      >
-                        {index}
-                      </th>
-                      <td className="py-4 px-6">{penerbits.penerbit}</td>
-                    </tr>
-                  </React.Fragment>
-                );
-              })}
+              {penerbits
+                .filter((val) => {
+                  if (search == "") {
+                    return val;
+                  } else if (
+                    val.penerbit.toLowerCase().includes(search.toLowerCase())
+                  ) {
+                    return val;
+                  }
+                })
+                .map((penerbits, index) => {
+                  return (
+                    <React.Fragment key={index}>
+                      <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                        <th
+                          scope="row"
+                          className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                        >
+                          {index}
+                        </th>
+                        <td className="py-4 px-6">{penerbits.penerbit}</td>
+                        <td className="py-4 px-6">
+                          <Link
+                            to={`/edit_penerbit/${penerbits.id}`}
+                            className=""
+                          >
+                            <button
+                              type="button"
+                              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                            >
+                              Ubah
+                            </button>
+                          </Link>
+                          <button
+                            onClick={() => deletePenerbit(penerbits.id)}
+                            type="button"
+                            className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+                          >
+                            Hapus
+                          </button>
+                        </td>
+                      </tr>
+                    </React.Fragment>
+                  );
+                })}
             </tbody>
           </table>
         </div>

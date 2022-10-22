@@ -18,6 +18,7 @@ import EditPengarang from "./components/Master_Buku/pengarang/edit.pengarang";
 // Penerbit
 import DataPenerbit from "./components/Master_Buku/penerbit/daftar.penerbit";
 import TambahPenerbit from "./components/Master_Buku/penerbit/tambah.penerbit";
+import EditPenerbit from "./components/Master_Buku/penerbit/edit.penerbit";
 
 // Buku
 import DataBuku from "./components/Master_Buku/buku/daftar.buku";
@@ -49,6 +50,7 @@ const App = () => {
           {/* Penerbit */}
           <Route path="/data_penerbit" element={<DataPenerbit />} />
           <Route path="/tambah_penerbit" element={<TambahPenerbit />} />
+          <Route path="/edit_penerbit/:id" element={<EditPenerbit />} />
 
           {/* Buku */}
           <Route path="/data_buku" element={<DataBuku />} />
