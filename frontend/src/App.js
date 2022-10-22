@@ -6,6 +6,7 @@ import Footer from "./components/Layouts/footer.layouts";
 import Home from "./components/Home/main.home";
 import DataAnggota from "./components/Anggota/daftar.anggota";
 import TambahAnggota from "./components/Anggota/tambah2.anggota";
+import EditAnggota from "./components/Anggota/edit.anggota";
 import DataPengarang from "./components/Master_Buku/pengarang/daftar.pengarang";
 import TambahPengarang from "./components/Master_Buku/pengarang/tambah.pengarang";
 import DataPenerbit from "./components/Master_Buku/penerbit/daftar.penerbit";
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/pinjam_buku" element={<LoanBook />} />
           <Route path="/data_anggota" element={<DataAnggota />} />
           <Route path="/tambah_anggota" element={<TambahAnggota />} />
+          <Route path="/edit_anggota/:id" element={<EditAnggota />} />
           <Route path="/data_pengarang" element={<DataPengarang />} />
           <Route path="/tambah_pengarang" element={<TambahPengarang />} />
           <Route path="/data_penerbit" element={<DataPenerbit />} />
