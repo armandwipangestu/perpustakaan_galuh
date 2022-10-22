@@ -5,10 +5,16 @@ import { Link } from "react-router-dom";
 const DataPeminjam = () => {
   const [peminjams, setPeminjams] = useState([]);
   const [search, setSearch] = useState("");
+  const [date, setDate] = useState("");
 
   useEffect(() => {
     getPeminjams();
+    getDate();
   }, []);
+
+  const getDate = async () => {
+    setDate(new Date().toISOString());
+  };
 
   const getPeminjams = async () => {
     const response = await axios.get(
@@ -85,7 +91,9 @@ const DataPeminjam = () => {
                   if (search == "") {
                     return val;
                   } else if (
-                    val.judul_buku.toLowerCase().includes(search.toLowerCase())
+                    val.nama_peminjam
+                      .toLowerCase()
+                      .includes(search.toLowerCase())
                   ) {
                     return val;
                   }
@@ -106,7 +114,12 @@ const DataPeminjam = () => {
                         <td className="py-4 px-6">
                           {peminjam.tanggal_kembali}
                         </td>
-                        <td className="py-4 px-6">Belum Dikembalikan</td>
+                        {peminjam.tanggal_kembali < date && (
+                          <td className="py-4 px-6">Sudah Dikembalikan</td>
+                        )}
+                        {peminjam.tanggal_kembali > date && (
+                          <td className="py-4 px-6">Belum Dikembalikan</td>
+                        )}
                         <td className="py-4 px-6">
                           <Link
                             to={`/edit_peminjam/${peminjam.id}`}
