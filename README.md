@@ -8,6 +8,7 @@
 - [API Information](https://github.com/armandwipangestu/perpustakaan_galuh#api-information)
 - [Fitur](https://github.com/armandwipangestu/perpustakaan_galuh#fitur)
 - [Preview](https://github.com/armandwipangestu/perpustakaan_galuh#preview)
+- [Kekurangan](https://github.com/armandwipangestu/perpustakaan_galuh#kekurangan)
 
 ### Teknologi Yang Digunakan
 
@@ -207,3 +208,7 @@ https://user-images.githubusercontent.com/64394320/197360495-ab2969ae-f842-422b-
 - Pengembalian
 
 https://user-images.githubusercontent.com/64394320/197360509-d3d9e83b-7d2d-4b25-8072-1feee36d0a85.mp4
+
+### Kekurangan
+
+Aplikasi ini masih banyak kekurangannya :D seperti relasi antar tabel nya belum saling terhubung. Karena keterbatasan saya dalam skill SQL nya (belum belajar relasi antar tabel)
