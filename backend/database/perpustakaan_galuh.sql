@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 22, 2022 at 07:05 PM
+-- Generation Time: Oct 22, 2022 at 07:32 PM
 -- Server version: 10.9.3-MariaDB
 -- PHP Version: 8.1.11
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `developer_test`
+-- Database: `perpustakaan_galuh`
 --
 
 -- --------------------------------------------------------
