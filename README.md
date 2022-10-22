@@ -12,10 +12,10 @@
 
 ### Teknologi Yang Digunakan
 
-| Backend | Frontend |
-| ------- | -------- |
-| MySQL   | ReactJS  |
-| Express |
+| Backend | Frontend     |
+| ------- | --------     |
+| MySQL   | ReactJS      |
+| Express | Tailwind CSS |
 | NodeJS  |
 
 ### Menjalankan di Localhost
