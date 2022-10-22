@@ -65,6 +65,9 @@ const Navigation = () => {
           >
             <ul className="items-center justify-center space-y-4 md:flex md:space-x-6 md:space-y-0">
               <li className="text-black dark:text-white">
+                <a href="/">BERANDA</a>
+              </li>
+              <li className="text-black dark:text-white">
                 <a href="/data_anggota">DATA ANGGOTA</a>
               </li>
               <li>
