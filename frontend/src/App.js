@@ -25,6 +25,12 @@ import DataBuku from "./components/Master_Buku/buku/daftar.buku";
 import TambahBuku from "./components/Master_Buku/buku/tambah.buku";
 import EditBuku from "./components/Master_Buku/buku/edit.buku";
 
+// Peminjam
+import DataPeminjam from "./components/Peminjam/daftar.peminjam";
+
+// Pengembalian
+import DataPengembalian from "./components/Pengembalian/daftar.pengembalian";
+
 // import AddBook from "./components/Books/add.books";
 import LoanBook from "./components/Borrows/add.borrows";
 import ListBorrow from "./components/Borrows/list.borrows";
@@ -58,6 +64,12 @@ const App = () => {
           <Route path="/data_buku" element={<DataBuku />} />
           <Route path="/tambah_buku" element={<TambahBuku />} />
           <Route path="/edit_buku/:id" element={<EditBuku />} />
+
+          {/* Peminjam */}
+          <Route path="/data_peminjam" element={<DataPeminjam />} />
+
+          {/* Pengembalian */}
+          <Route path="/data_pengembalian" element={<DataPengembalian />} />
         </Routes>
         <Footer />
       </BrowserRouter>
