@@ -3,6 +3,12 @@
 
 ### Daftar Isi
 
+- [Teknologi Yang Digunakan](https://github.com/armandwipangestu/perpustakaan_galuh#teknologi-yang-digunakan)
+- [Menjalankan di Localhost](https://github.com/armandwipangestu/perpustakaan_galuh#menjalankan-di-localhost)
+- [API Information](https://github.com/armandwipangestu/perpustakaan_galuh#api-information)
+- [Fitur](https://github.com/armandwipangestu/perpustakaan_galuh#fitur)
+- [Preview](https://github.com/armandwipangestu/perpustakaan_galuh#preview)
+
 ### Teknologi Yang Digunakan
 
 | Backend | Frontend |
