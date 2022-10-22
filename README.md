@@ -179,3 +179,31 @@ yarn start
 - Filter / Searching
 
 ### Preview
+
+- Beranda / Home Page
+
+https://user-images.githubusercontent.com/64394320/197359697-4dc952e6-3306-47e5-9491-e4ce85417ec2.mp4
+
+- User
+
+https://user-images.githubusercontent.com/64394320/197360428-24e0e3d3-3143-405c-a4f2-05ae58dd6a04.mp4
+
+- Pengarang
+
+https://user-images.githubusercontent.com/64394320/197360452-c33b1fd9-41c8-4703-a272-0c97ff8360d3.mp4
+
+- Penerbit
+
+https://user-images.githubusercontent.com/64394320/197360461-d0bee3b1-90de-4516-a791-02b2f62be3d6.mp4
+
+- Buku
+
+https://user-images.githubusercontent.com/64394320/197360478-5c1637ec-3022-4ecd-90b9-703e14e9c795.mp4
+
+- Peminjam
+
+https://user-images.githubusercontent.com/64394320/197360495-ab2969ae-f842-422b-9fcf-68501ec500c9.mp4
+
+- Pengembalian
+
+https://user-images.githubusercontent.com/64394320/197360509-d3d9e83b-7d2d-4b25-8072-1feee36d0a85.mp4
