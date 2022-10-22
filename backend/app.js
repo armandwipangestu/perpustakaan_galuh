@@ -5,6 +5,7 @@ import AnggotaRoute from "./routes/anggota.routes.js";
 import PengarangRoute from "./routes/pengarang.routes.js";
 import PenerbitRoute from "./routes/penerbit.routes.js";
 import PeminjamRoute from "./routes/peminjam.routes.js";
+import PengembalianBuku from "./models/pengembalian.models.js";
 
 const app = express();
 app.use(cors());
@@ -15,6 +16,7 @@ app.use(AnggotaRoute);
 app.use(PengarangRoute);
 app.use(PenerbitRoute);
 app.use(PeminjamRoute);
+app.use(PengembalianBuku);
 
 app.listen(5000, () => {
   console.log("Server up and running on localhost:5000");
