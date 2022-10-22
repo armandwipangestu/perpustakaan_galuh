@@ -28,6 +28,7 @@ import EditBuku from "./components/Master_Buku/buku/edit.buku";
 // Peminjam
 import DataPeminjam from "./components/Peminjam/daftar.peminjam";
 import TambahPeminjam from "./components/Peminjam/tambah.peminjam";
+import EditPeminjam from "./components/Peminjam/edit.peminjam";
 
 // Pengembalian
 import DataPengembalian from "./components/Pengembalian/daftar.pengembalian";
@@ -69,6 +70,7 @@ const App = () => {
           {/* Peminjam */}
           <Route path="/data_peminjam" element={<DataPeminjam />} />
           <Route path="/tambah_peminjam" element={<TambahPeminjam />} />
+          <Route path="/edit_peminjam/:id" element={<EditPeminjam />} />
 
           {/* Pengembalian */}
           <Route path="/data_pengembalian" element={<DataPengembalian />} />
