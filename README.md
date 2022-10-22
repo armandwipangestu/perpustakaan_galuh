@@ -42,7 +42,7 @@ yarn install
 ```
 
 ```bash
-yarn add -g nodemon
+yarn global add nodemon
 ```
 
 - Buat Database `perpustakaan_galuh`
