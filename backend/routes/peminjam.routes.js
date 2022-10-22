@@ -1,18 +1,18 @@
 import express from "express";
 import {
-  getBorrows,
-  getBorrowById,
-  createBorrow,
-  updateBorrow,
-  deleteBorrow,
+  getPeminjams,
+  getPeminjamById,
+  createPeminjam,
+  updatePeminjam,
+  deletePeminjam,
 } from "../controllers/peminjam.controllers.js";
 
 const router = express.Router();
 
-router.get("/api/borrows", getBorrows);
-router.get("/api/borrows/:id", getBorrowById);
-router.post("/api/borrows", createBorrow);
-router.patch("/api/borrows/:id", updateBorrow);
-router.delete("/api/borrows/:id", deleteBorrow);
+router.get("/api/peminjams", getPeminjams);
+router.get("/api/peminjams/:id", getPeminjamById);
+router.post("/api/peminjams", createPeminjam);
+router.patch("/api/peminjams/:id", updatePeminjam);
+router.delete("/api/peminjams/:id", deletePeminjam);
 
 export default router;

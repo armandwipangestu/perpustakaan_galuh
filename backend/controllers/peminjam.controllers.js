@@ -1,6 +1,6 @@
 import PeminjamBuku from "../models/peminjam.models.js";
 
-export const getBorrows = async (req, res) => {
+export const getPeminjams = async (req, res) => {
   try {
     const response = await PeminjamBuku.findAll();
     res.status(200).json(response);
@@ -9,7 +9,7 @@ export const getBorrows = async (req, res) => {
   }
 };
 
-export const getBorrowById = async (req, res) => {
+export const getPeminjamById = async (req, res) => {
   try {
     const response = await PeminjamBuku.findOne({
       where: {
@@ -22,36 +22,36 @@ export const getBorrowById = async (req, res) => {
   }
 };
 
-export const createBorrow = async (req, res) => {
+export const createPeminjam = async (req, res) => {
   try {
     await PeminjamBuku.create(req.body);
-    res.status(201).json({ message: "Loan Added" });
+    res.status(201).json({ message: "Peminjam Added" });
   } catch (error) {
     console.log(error.message);
   }
 };
 
-export const updateBorrow = async (req, res) => {
+export const updatePeminjam = async (req, res) => {
   try {
     await PeminjamBuku.update(req.body, {
       where: {
         id: req.params.id,
       },
     });
-    res.status(200).json({ message: "Loan Updated" });
+    res.status(200).json({ message: "Peminjam Updated" });
   } catch (error) {
     console.log(error.message);
   }
 };
 
-export const deleteBorrow = async (req, res) => {
+export const deletePeminjam = async (req, res) => {
   try {
     await PeminjamBuku.destroy({
       where: {
         id: req.params.id,
       },
     });
-    res.status(200).json({ message: "Loan Deleted" });
+    res.status(200).json({ message: "Peminjam Deleted" });
   } catch (error) {
     console.log(error.message);
   }
