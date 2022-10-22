@@ -11,7 +11,7 @@ const DataPenerbit = () => {
 
   const getPenerbits = async () => {
     const response = await axios.get(
-      `${process.env.REACT_APP_BASEURL}/api/books`
+      `${process.env.REACT_APP_BASEURL}/api/penerbits`
     );
     setPenerbits(response.data);
   };

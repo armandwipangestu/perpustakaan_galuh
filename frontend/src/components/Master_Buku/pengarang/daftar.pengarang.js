@@ -11,7 +11,7 @@ const DataPengarang = () => {
 
   const getPengarangs = async () => {
     const response = await axios.get(
-      `${process.env.REACT_APP_BASEURL}/api/books`
+      `${process.env.REACT_APP_BASEURL}/api/pengarangs`
     );
     setPengarangs(response.data);
   };
