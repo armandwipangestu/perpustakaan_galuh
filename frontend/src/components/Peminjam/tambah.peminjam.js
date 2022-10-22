@@ -1,20 +1,32 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 const TambahPeminjam = () => {
-  const [id_peminjam, setId_peminjam] = useState("");
+  const [id_peminjam, setId_peminjam] = useState("PM000");
   const [nama_peminjam, setNama_peminjam] = useState("");
   const [judul_buku, setJudul_buku] = useState("");
-  const [tanggal_pinjam, setTanggal_pinjam] = useState("");
-  const [tanggal_kembali, setTanggal_kembali] = useState("");
+  const [tanggal_pinjam, setTanggal_pinjam] = useState(new Date());
+  const [tanggal_kembali, setTanggal_kembali] = useState(new Date());
 
   const navigate = useNavigate();
+  const [getAnggotas, setAnggotas] = useState([]);
   const [getBukus, setBukus] = useState([]);
 
   useEffect(() => {
+    findAnggotas();
     findBukus();
   }, []);
+
+  const findAnggotas = async () => {
+    const response = await axios.get(
+      `${process.env.REACT_APP_BASEURL}/api/users`
+    );
+    setAnggotas(response.data);
+  };
 
   const findBukus = async () => {
     const response = await axios.get(
@@ -37,6 +49,10 @@ const TambahPeminjam = () => {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const handleChangeAnggota = (event) => {
+    setNama_peminjam(event.target.value);
   };
 
   const handleChangeBuku = (event) => {
@@ -71,14 +87,23 @@ const TambahPeminjam = () => {
               >
                 Nama Peminjam
               </label>
-              <input
-                type="text"
+              <select
+                value={nama_peminjam}
+                label="Judul Buku"
+                onChange={handleChangeAnggota}
                 id="nama_peminjam"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                required=""
-                value={nama_peminjam}
-                onChange={(e) => setNama_peminjam(e.target.value)}
-              />
+              >
+                {getAnggotas.map((getAnggota, index) => {
+                  return (
+                    <React.Fragment key={index}>
+                      <option value={getAnggota.nama_anggota}>
+                        {getAnggota.nama_anggota}
+                      </option>
+                    </React.Fragment>
+                  );
+                })}
+              </select>
             </div>
             <div>
               <label
@@ -112,13 +137,17 @@ const TambahPeminjam = () => {
               >
                 Tanggal Pinjam
               </label>
-              <input
-                type="text"
-                id="tanggal_pinjam"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                required=""
-                value={tanggal_pinjam}
-                onChange={(e) => setTanggal_pinjam(e.target.value)}
+              <DatePicker
+                selected={tanggal_pinjam}
+                onChange={(date) => setTanggal_pinjam(date)}
+                className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Select date"
+                isClearable
+                dateFormat="dd-MM-yyyy"
+                selectsStart
+                startDate={tanggal_pinjam}
+                endDate={tanggal_kembali}
+                withPortal
               />
             </div>
             <div>
@@ -128,13 +157,18 @@ const TambahPeminjam = () => {
               >
                 Tanggal Kembali
               </label>
-              <input
-                type="text"
-                id="tanggal_kembali"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                required=""
-                value={tanggal_kembali}
-                onChange={(e) => setTanggal_kembali(e.target.value)}
+              <DatePicker
+                selected={tanggal_kembali}
+                onChange={(date) => setTanggal_kembali(date)}
+                className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Select date"
+                isClearable
+                dateFormat="dd-MM-yyyy"
+                selectsEnd
+                startDate={tanggal_pinjam}
+                endDate={tanggal_kembali}
+                minDate={tanggal_pinjam}
+                withPortal
               />
             </div>
           </div>
