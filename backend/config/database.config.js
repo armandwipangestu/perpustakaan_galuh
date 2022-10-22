@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize";
 
-const db_name = "developer_test";
+const db_name = "perpustakaan_galuh";
 const db_host = "localhost";
 const db_user = "root";
 const db_pass = "roottoor";
