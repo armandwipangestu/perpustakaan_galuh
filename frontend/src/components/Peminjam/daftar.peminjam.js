@@ -1,20 +1,24 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 const DataPeminjam = () => {
   const [peminjams, setPeminjams] = useState([]);
   const [search, setSearch] = useState("");
-  const [date, setDate] = useState("");
+
+  const [id, setId] = useState();
+  const [status, setStatus] = useState("");
+  const [nama_peminjam, setNama_peminjam] = useState("");
+  const [judul_buku, setJudul_buku] = useState("");
+  const [tanggal_pinjam, setTanggal_pinjam] = useState("");
+  const [tanggal_kembali, setTanggal_kembali] = useState("");
+  const [tanggal_pengembalian, setTanggal_pengembalian] = useState(
+    new Date().toISOString()
+  );
 
   useEffect(() => {
     getPeminjams();
-    getDate();
   }, []);
-
-  const getDate = async () => {
-    setDate(new Date().toISOString());
-  };
 
   const getPeminjams = async () => {
     const response = await axios.get(
@@ -32,10 +36,46 @@ const DataPeminjam = () => {
     }
   };
 
+  const savePengembalian = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.patch(
+        `${process.env.REACT_APP_BASEURL}/api/peminjams/${id}`,
+        {
+          status,
+        }
+      );
+      await axios.post(`${process.env.REACT_APP_BASEURL}/api/pengembalians/`, {
+        nama_peminjam,
+        judul_buku,
+        tanggal_pinjam,
+        tanggal_kembali,
+        tanggal_pengembalian,
+      });
+      // Navigate("/data_peminjam");
+      window.location.reload(true);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const setData = (data) => {
+    setId(data.id);
+    setNama_peminjam(data.nama_peminjam);
+    setJudul_buku(data.judul_buku);
+    setTanggal_pinjam(data.tanggal_pinjam);
+    setTanggal_kembali(data.tanggal_kembali);
+    // setTanggal_pengembalian();
+  };
+
+  const convertDate = (date) => {
+    return date.substring(0, 10);
+  };
+
   return (
     <div className="pt-5 mb-5 px-4 md:px-16">
       <section id="tambah_peminjam">
-        <h1 className="text-4xl text-start dark:text-white">Daftar Buku</h1>
+        <h1 className="text-4xl text-start dark:text-white">Daftar Peminjam</h1>
         <hr className="mt-3" />
         <div className="mt-3">
           <Link to={`/tambah_peminjam`}>
@@ -110,16 +150,13 @@ const DataPeminjam = () => {
                         </th>
                         <td className="py-4 px-6">{peminjam.nama_peminjam}</td>
                         <td className="py-4 px-6">{peminjam.judul_buku}</td>
-                        <td className="py-4 px-6">{peminjam.tanggal_pinjam}</td>
                         <td className="py-4 px-6">
-                          {peminjam.tanggal_kembali}
+                          {convertDate(peminjam.tanggal_pinjam)}
                         </td>
-                        {peminjam.tanggal_kembali < date && (
-                          <td className="py-4 px-6">Sudah Dikembalikan</td>
-                        )}
-                        {peminjam.tanggal_kembali > date && (
-                          <td className="py-4 px-6">Belum Dikembalikan</td>
-                        )}
+                        <td className="py-4 px-6">
+                          {convertDate(peminjam.tanggal_kembali)}
+                        </td>
+                        <td className="py-4 px-6">{peminjam.status}</td>
                         <td className="py-4 px-6">
                           <Link
                             to={`/edit_peminjam/${peminjam.id}`}
@@ -132,6 +169,78 @@ const DataPeminjam = () => {
                               Ubah
                             </button>
                           </Link>
+                          {peminjam.status == "Belum Dikumpulkan" && (
+                            <React.Fragment>
+                              <form onSubmit={savePengembalian}>
+                                <div className="hidden">
+                                  <input
+                                    type="text"
+                                    id="status"
+                                    required=""
+                                    value={status}
+                                    onChange={(e) => setStatus(e.target.value)}
+                                  />
+                                  <input
+                                    type="text"
+                                    id="nama_peminjam"
+                                    required=""
+                                    value={nama_peminjam}
+                                    onChange={(e) =>
+                                      setNama_peminjam(e.target.value)
+                                    }
+                                  />
+                                  <input
+                                    type="text"
+                                    id="judul_buku"
+                                    required=""
+                                    value={judul_buku}
+                                    onChange={(e) =>
+                                      setJudul_buku(e.target.value)
+                                    }
+                                  />
+                                  <input
+                                    type="text"
+                                    id="tanggal_pinjam"
+                                    required=""
+                                    value={tanggal_pinjam}
+                                    onChange={(e) =>
+                                      setTanggal_pinjam(e.target.value)
+                                    }
+                                  />
+                                  <input
+                                    type="text"
+                                    id="tanggal_kembali"
+                                    required=""
+                                    value={tanggal_kembali}
+                                    onChange={(e) =>
+                                      setTanggal_kembali(e.target.value)
+                                    }
+                                  />
+                                  <input
+                                    type="text"
+                                    id="tanggal_pengembalian"
+                                    required=""
+                                    value={tanggal_pengembalian}
+                                    onChange={(e) =>
+                                      setTanggal_pengembalian(e.target.value)
+                                    }
+                                  />
+                                </div>
+                                <button
+                                  onClick={() => {
+                                    setData(peminjam);
+                                    setStatus("Sudah Dikumpulkan");
+                                    // window.location.reload(true);
+                                  }}
+                                  type="submit"
+                                  className="focus:outline-none text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-900"
+                                >
+                                  Kumpulkan
+                                </button>
+                              </form>
+                            </React.Fragment>
+                          )}
+
                           <Link to={`/data_peminjam`} className="">
                             <button
                               onClick={() => {
