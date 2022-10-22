@@ -36,6 +36,12 @@ yarn install
 yarn add -g nodemon
 ```
 
+- Buat Database `perpustakaan_galuh`
+
+```sql
+CREATE DATABASE perpustakaan_galuh;
+```
+
 - Menjalankan Backend Server
 
 ```bash
