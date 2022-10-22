@@ -1,6 +1,8 @@
 <h1 align="center">Perpustakaan Galuh</h1>
 <p align="center">Sebuah repository yang berisi aplikasi perpustakaan berbasis website</p>
 
+### Daftar Isi
+
 ### Teknologi Yang Digunakan
 
 | Backend | Frontend |
@@ -42,6 +44,18 @@ yarn add -g nodemon
 CREATE DATABASE perpustakaan_galuh;
 ```
 
+- Import File Database dummy di dalam folder `backend/database/perpustakaan_galuh.sql`
+
+- Sesuaikan Konfigurasi Database di dalam file `backend/config/database.config.js`
+
+```javascript
+const db_name = "perpustakaan_galuh";
+const db_host = "localhost";
+const db_user = "root";
+const db_pass = "";
+const db_vendor = "mysql";
+```
+
 - Menjalankan Backend Server
 
 ```bash
@@ -65,6 +79,12 @@ cd perpustakaan_galuh/frontend
 
 ```bash
 yarn install
+```
+
+- Sesuaikan Konfigurasi `BASEURL` di dalam file `frontend/.env`
+
+```env
+REACT_APP_BASEURL = "http://localhost:5000"
 ```
 
 - Menjalankan Frontend Server
@@ -138,3 +158,16 @@ yarn start
 | `/api/pengembalians`     | POST   |
 | `/api/pengembalians/:id` | PATCH  |
 | `/api/pengembalians/:id` | DELETE |
+
+### Fitur
+
+- Menyimpan Data:
+
+  - Anggota
+  - Pengarang
+  - Penerbit
+  - Buku
+  - Transaksi Peminjaman
+  - Transaksi Pengembalian
+
+- Filter / Searching
