@@ -44,7 +44,7 @@ const DataBuku = () => {
             type="text"
             id="search-book"
             className="p-2 pl-5 w-full text-gray-900 bg-gray-50 rounded-md border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Search..."
+            placeholder="Cari"
             onChange={(e) => {
               setSearch(e.target.value);
             }}
@@ -85,10 +85,28 @@ const DataBuku = () => {
             <tbody>
               {bukus
                 .filter((val) => {
-                  if (search == "") {
+                  if (search === "") {
                     return val;
                   } else if (
                     val.judul_buku.toLowerCase().includes(search.toLowerCase())
+                  ) {
+                    return val;
+                  } else if (
+                    val.pengarang
+                      .toLowerCase()
+                      .includes(search.toLocaleLowerCase())
+                  ) {
+                    return val;
+                  } else if (
+                    val.penerbit
+                      .toLowerCase()
+                      .includes(search.toLocaleLowerCase())
+                  ) {
+                    return val;
+                  } else if (
+                    val.bahasa
+                      .toLowerCase()
+                      .includes(search.toLocaleLowerCase())
                   ) {
                     return val;
                   }
@@ -101,7 +119,7 @@ const DataBuku = () => {
                           scope="row"
                           className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                         >
-                          {index}
+                          {buku.id_buku}
                         </th>
                         <td className="py-4 px-6">{buku.judul_buku}</td>
                         <td className="py-4 px-6">{buku.pengarang}</td>

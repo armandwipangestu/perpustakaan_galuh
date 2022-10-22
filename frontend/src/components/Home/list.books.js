@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBookmark as farBookmark } from "@fortawesome/free-regular-svg-icons";
 
 const ListBooks = () => {
   const [books, setBooks] = useState([]);
@@ -24,7 +21,7 @@ const ListBooks = () => {
       <div className="">
         <h1 className="text-4xl text-start dark:text-white">E-Perpustakaan</h1>
         <p className="text-1xl text-gray-700 dark:text-gray-400 mt-3">
-          Developer Test
+          Aplikasi Perpustakaan Berbasis Website
         </p>
       </div>
       <div className="mb-5 mt-5">
@@ -36,7 +33,7 @@ const ListBooks = () => {
               type="text"
               id="search-book"
               className="p-2 pl-5 w-full text-gray-900 bg-gray-50 rounded-md border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Search..."
+              placeholder="Cari"
               onChange={(e) => {
                 setSearch(e.target.value);
               }}
@@ -47,10 +44,22 @@ const ListBooks = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {books
           .filter((val) => {
-            if (search == "") {
+            if (search === "") {
               return val;
             } else if (
               val.judul_buku.toLowerCase().includes(search.toLowerCase())
+            ) {
+              return val;
+            } else if (
+              val.pengarang.toLowerCase().includes(search.toLocaleLowerCase())
+            ) {
+              return val;
+            } else if (
+              val.penerbit.toLowerCase().includes(search.toLocaleLowerCase())
+            ) {
+              return val;
+            } else if (
+              val.bahasa.toLowerCase().includes(search.toLocaleLowerCase())
             ) {
               return val;
             }
@@ -59,7 +68,7 @@ const ListBooks = () => {
             return (
               <React.Fragment key={index}>
                 <a
-                  href=""
+                  href={`/edit_buku/${book.id}`}
                   className="flex flex-col bg-white rounded-md border md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
                 >
                   <img

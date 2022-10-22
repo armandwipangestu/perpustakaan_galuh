@@ -44,7 +44,7 @@ const DataPenerbit = () => {
             type="text"
             id="search-book"
             className="p-2 pl-5 w-full text-gray-900 bg-gray-50 rounded-md border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Search..."
+            placeholder="Cari"
             onChange={(e) => {
               setSearch(e.target.value);
             }}
@@ -75,7 +75,7 @@ const DataPenerbit = () => {
                     return val;
                   }
                 })
-                .map((penerbits, index) => {
+                .map((penerbit, index) => {
                   return (
                     <React.Fragment key={index}>
                       <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
@@ -83,12 +83,12 @@ const DataPenerbit = () => {
                           scope="row"
                           className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                         >
-                          {index}
+                          {penerbit.id}
                         </th>
-                        <td className="py-4 px-6">{penerbits.penerbit}</td>
+                        <td className="py-4 px-6">{penerbit.penerbit}</td>
                         <td className="py-4 px-6">
                           <Link
-                            to={`/edit_penerbit/${penerbits.id}`}
+                            to={`/edit_penerbit/${penerbit.id}`}
                             className=""
                           >
                             <button
@@ -99,7 +99,7 @@ const DataPenerbit = () => {
                             </button>
                           </Link>
                           <button
-                            onClick={() => deletePenerbit(penerbits.id)}
+                            onClick={() => deletePenerbit(penerbit.id)}
                             type="button"
                             className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
                           >

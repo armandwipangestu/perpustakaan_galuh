@@ -46,7 +46,7 @@ const DataPengarang = () => {
             type="text"
             id="search-book"
             className="p-2 pl-5 w-full text-gray-900 bg-gray-50 rounded-md border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Search..."
+            placeholder="Cari"
             onChange={(e) => {
               setSearch(e.target.value);
             }}
@@ -88,7 +88,7 @@ const DataPengarang = () => {
                           scope="row"
                           className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                         >
-                          {index}
+                          {pengarang.id}
                         </th>
                         <td className="py-4 px-6">{pengarang.pengarang}</td>
                         <td className="py-4 px-6">

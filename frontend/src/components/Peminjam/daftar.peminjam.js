@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const DataPeminjam = () => {
   const [peminjams, setPeminjams] = useState([]);
@@ -90,7 +90,7 @@ const DataPeminjam = () => {
             type="text"
             id="search-book"
             className="p-2 pl-5 w-full text-gray-900 bg-gray-50 rounded-md border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Search..."
+            placeholder="Cari"
             onChange={(e) => {
               setSearch(e.target.value);
             }}
@@ -128,12 +128,16 @@ const DataPeminjam = () => {
             <tbody>
               {peminjams
                 .filter((val) => {
-                  if (search == "") {
+                  if (search === "") {
                     return val;
                   } else if (
                     val.nama_peminjam
                       .toLowerCase()
                       .includes(search.toLowerCase())
+                  ) {
+                    return val;
+                  } else if (
+                    val.judul_buku.toLowerCase().includes(search.toLowerCase())
                   ) {
                     return val;
                   }
@@ -169,7 +173,7 @@ const DataPeminjam = () => {
                               Ubah
                             </button>
                           </Link>
-                          {peminjam.status == "Belum Dikumpulkan" && (
+                          {peminjam.status === "Belum Dikumpulkan" && (
                             <React.Fragment>
                               <form onSubmit={savePengembalian}>
                                 <div className="hidden">

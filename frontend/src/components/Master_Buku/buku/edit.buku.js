@@ -179,22 +179,7 @@ const EditBuku = () => {
                 onChange={(e) => setTahun_terbit(e.target.value)}
               />
             </div>
-            <div>
-              <label
-                htmlFor="gambar"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >
-                Gambar
-              </label>
-              <input
-                type="text"
-                id="gambar"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                required=""
-                value={gambar}
-                onChange={(e) => setGambar(e.target.value)}
-              />
-            </div>
+
             <div>
               <label
                 htmlFor="bahasa"
@@ -209,6 +194,30 @@ const EditBuku = () => {
                 required=""
                 value={bahasa}
                 onChange={(e) => setBahasa(e.target.value)}
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="gambar"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >
+                Gambar
+              </label>
+              <blockquote class="p-3 my-2 bg-gray-50 border-l-4 border-gray-300 dark:border-gray-500 dark:bg-gray-800">
+                <p class="text-xs font-medium leading-relaxed text-gray-900 dark:text-white">
+                  Di isi dengan link gambarnya, contoh:{" "}
+                  <span className="text-blue-700">
+                    https://domain.com/gambar.png
+                  </span>
+                </p>
+              </blockquote>
+              <input
+                type="text"
+                id="gambar"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                required=""
+                value={gambar}
+                onChange={(e) => setGambar(e.target.value)}
               />
             </div>
           </div>

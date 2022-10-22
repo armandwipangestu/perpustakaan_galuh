@@ -147,7 +147,10 @@ const Navigation = () => {
                 </Menu>
               </li>
               <li>
-                <Menu as="div" className="relative inline-block text-left">
+                <Menu
+                  as="div"
+                  className="relative inline-block text-left md:mr-16"
+                >
                   <div>
                     <Menu.Button
                       style={{ border: "none" }}
@@ -206,9 +209,6 @@ const Navigation = () => {
                     </Menu.Items>
                   </Transition>
                 </Menu>
-              </li>
-              <li className="text-black dark:text-white">
-                <a href="/tentang">TENTANG</a>
               </li>
             </ul>
           </div>

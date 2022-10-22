@@ -7,7 +7,7 @@ import Home from "./components/Home/main.home";
 
 // Anggota
 import DataAnggota from "./components/Anggota/daftar.anggota";
-import TambahAnggota from "./components/Anggota/tambah2.anggota";
+import TambahAnggota from "./components/Anggota/tambah.anggota";
 import EditAnggota from "./components/Anggota/edit.anggota";
 
 // Pengarang
@@ -33,19 +33,14 @@ import EditPeminjam from "./components/Peminjam/edit.peminjam";
 // Pengembalian
 import DataPengembalian from "./components/Pengembalian/daftar.pengembalian";
 
-// import AddBook from "./components/Books/add.books";
-import LoanBook from "./components/Borrows/add.borrows";
-import ListBorrow from "./components/Borrows/list.borrows";
-
 const App = () => {
   return (
     <MainLayouts>
       <BrowserRouter>
         <Navigation />
         <Routes>
+          {/* Home */}
           <Route path="/" element={<Home />} />
-          {/* <Route path="/tambah_buku" element={<AddBook />} /> */}
-          <Route path="/pinjam_buku" element={<LoanBook />} />
 
           {/* Anggota */}
           <Route path="/data_anggota" element={<DataAnggota />} />
