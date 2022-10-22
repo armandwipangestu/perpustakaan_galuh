@@ -11,6 +11,7 @@ const PeminjamBuku = DatabaseConnection.define(
     judul_buku: DataTypes.STRING,
     tanggal_pinjam: DataTypes.STRING,
     tanggal_kembali: DataTypes.STRING,
+    status: DataTypes.STRING,
   },
   {
     freezeTableName: true,
