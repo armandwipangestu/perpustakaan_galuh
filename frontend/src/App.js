@@ -23,6 +23,8 @@ import EditPenerbit from "./components/Master_Buku/penerbit/edit.penerbit";
 // Buku
 import DataBuku from "./components/Master_Buku/buku/daftar.buku";
 import TambahBuku from "./components/Master_Buku/buku/tambah.buku";
+import EditBuku from "./components/Master_Buku/buku/edit.buku";
+
 // import AddBook from "./components/Books/add.books";
 import LoanBook from "./components/Borrows/add.borrows";
 import ListBorrow from "./components/Borrows/list.borrows";
@@ -55,6 +57,7 @@ const App = () => {
           {/* Buku */}
           <Route path="/data_buku" element={<DataBuku />} />
           <Route path="/tambah_buku" element={<TambahBuku />} />
+          <Route path="/edit_buku/:id" element={<EditBuku />} />
         </Routes>
         <Footer />
       </BrowserRouter>
