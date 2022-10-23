@@ -3,12 +3,17 @@
 
 ### Daftar Isi
 
+- [Demo](https://github.com/armandwipangestu/perpustakaan_galuh#demo)
 - [Teknologi Yang Digunakan](https://github.com/armandwipangestu/perpustakaan_galuh#teknologi-yang-digunakan)
 - [Menjalankan di Localhost](https://github.com/armandwipangestu/perpustakaan_galuh#menjalankan-di-localhost)
 - [API Information](https://github.com/armandwipangestu/perpustakaan_galuh#api-information)
 - [Fitur](https://github.com/armandwipangestu/perpustakaan_galuh#fitur)
 - [Preview](https://github.com/armandwipangestu/perpustakaan_galuh#preview)
 - [Kekurangan](https://github.com/armandwipangestu/perpustakaan_galuh#kekurangan)
+
+### Demo
+
+[perpustakaan-galuh.vercel.app](https://perpustakaan-galuh.vercel.app/)
 
 ### Teknologi Yang Digunakan
 
