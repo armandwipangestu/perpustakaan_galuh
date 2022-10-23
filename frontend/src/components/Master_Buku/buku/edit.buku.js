@@ -203,8 +203,8 @@ const EditBuku = () => {
               >
                 Gambar
               </label>
-              <blockquote class="p-3 my-2 bg-gray-50 border-l-4 border-gray-300 dark:border-gray-500 dark:bg-gray-800">
-                <p class="text-xs font-medium leading-relaxed text-gray-900 dark:text-white">
+              <blockquote className="p-3 my-2 bg-gray-50 border-l-4 border-gray-300 dark:border-gray-500 dark:bg-gray-800">
+                <p className="text-xs font-medium leading-relaxed text-gray-900 dark:text-white">
                   Di isi dengan link gambarnya, contoh:{" "}
                   <span className="text-blue-700">
                     https://domain.com/gambar.png

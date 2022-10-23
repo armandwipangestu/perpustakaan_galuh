@@ -29,9 +29,7 @@ const DataAnggota = () => {
   return (
     <div className="pt-5 mb-5 px-4 md:px-16">
       <section id="tambah_anggota">
-        <h1 className="text-4xl text-start dark:text-white">
-          Daftar Data Anggota
-        </h1>
+        <h1 className="text-4xl text-start dark:text-white">Daftar Anggota</h1>
         <hr className="mt-3" />
         <div className="mt-3">
           <Link to={`/tambah_anggota`}>
@@ -124,13 +122,18 @@ const DataAnggota = () => {
                               Ubah
                             </button>
                           </Link>
-                          <button
-                            onClick={() => deleteAnggota(anggota.id)}
-                            type="button"
-                            className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
-                          >
-                            Hapus
-                          </button>
+                          <Link to={`/data_anggota`} className="">
+                            <button
+                              onClick={() => {
+                                deleteAnggota(anggota.id);
+                                window.location.reload(true);
+                              }}
+                              type="button"
+                              className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+                            >
+                              Hapus
+                            </button>
+                          </Link>
                         </td>
                       </tr>
                     </React.Fragment>

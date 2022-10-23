@@ -140,6 +140,10 @@ const DataPeminjam = () => {
                     val.judul_buku.toLowerCase().includes(search.toLowerCase())
                   ) {
                     return val;
+                  } else if (
+                    val.status.toLowerCase().includes(search.toLowerCase())
+                  ) {
+                    return val;
                   }
                 })
                 .map((peminjam, index) => {
