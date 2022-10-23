@@ -53,14 +53,15 @@ CREATE DATABASE perpustakaan_galuh;
 
 - Import File Database dummy di dalam folder `backend/database/perpustakaan_galuh.sql`
 
-- Sesuaikan Konfigurasi Database di dalam file `backend/config/database.config.js`
+- Sesuaikan Konfigurasi Database di dalam file `backend/.env` dan `backend/config/.env`
 
-```javascript
-const db_name = "perpustakaan_galuh";
-const db_host = "localhost";
-const db_user = "root";
-const db_pass = "";
-const db_vendor = "mysql";
+```bash
+DB_NAME="perpustakaan_galuh"
+DB_HOST="localhost"
+DB_PORT="3306"
+DB_USER="root"
+DB_PASS=""
+DB_VENDOR="mysql"
 ```
 
 - Menjalankan Backend Server
