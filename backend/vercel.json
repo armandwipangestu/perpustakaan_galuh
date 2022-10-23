@@ -12,5 +12,14 @@
       "dest": "/"
     }
   ],
-  "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }]
+  "rewrites": [
+    {
+      "source": "/users/:id",
+      "destination": "/api/users"
+    },
+    {
+      "source": "/pengarangs/:id",
+      "destination": "/api/pengarangs"
+    }
+  ]
 }
