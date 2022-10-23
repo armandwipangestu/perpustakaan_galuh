@@ -2,9 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
-  "engines": {
-    "node": "14.x"
-  },
+  "engines": {},
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,6 +13,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "https": "^1.0.0",
     "mysql2": "^2.3.3",
     "sequelize": "^6.25.3"
   }
