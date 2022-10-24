@@ -13,6 +13,8 @@
 
 ### Demo
 
+> **CATATAN**: Apabila domain tidak memunculkan daftar buku / data lainnya, buka
+> link API terlebih dahulu dan accep risk SSL Warning nya (dikarenakan SSL Cert nya dibuat secara manual)
 - Domain: [perpustakaan-galuh.vercel.app](https://perpustakaan-galuh.vercel.app/)
 - API: [103.176.78.68:5000/api/books](https://103.176.78.68:5000/api/books)
 
