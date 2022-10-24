@@ -13,7 +13,8 @@
 
 ### Demo
 
-[perpustakaan-galuh.vercel.app](https://perpustakaan-galuh.vercel.app/)
+- Domain: [perpustakaan-galuh.vercel.app](https://perpustakaan-galuh.vercel.app/)
+- API: [103.176.78.68:5000/api/books](https://103.176.78.68:5000/api/books)
 
 ### Teknologi Yang Digunakan
 
