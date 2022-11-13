@@ -1,6 +1,8 @@
 <h1 align="center">Perpustakaan Galuh</h1>
 <p align="center">Sebuah repository yang berisi aplikasi perpustakaan berbasis website</p>
 
+<img src="https://user-images.githubusercontent.com/64394320/201525279-21f99c4c-1daa-4ccd-ab2a-c50602c43f18.png" alt="Perpustakaan Galuh">
+
 ### Daftar Isi
 
 - [Demo](https://github.com/armandwipangestu/perpustakaan_galuh#demo)
@@ -18,7 +20,7 @@
 ### Teknologi Yang Digunakan
 
 | Backend | Frontend     |
-| ------- | --------     |
+| ------- | ------------ |
 | MySQL   | ReactJS      |
 | Express | Tailwind CSS |
 | NodeJS  |
