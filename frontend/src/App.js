@@ -24,6 +24,7 @@ import EditPenerbit from "./components/Master_Buku/penerbit/edit.penerbit";
 import DataBuku from "./components/Master_Buku/buku/daftar.buku";
 import TambahBuku from "./components/Master_Buku/buku/tambah.buku";
 import EditBuku from "./components/Master_Buku/buku/edit.buku";
+import LihatBuku from "./components/Master_Buku/buku/lihat.buku";
 
 // Peminjam
 import DataPeminjam from "./components/Peminjam/daftar.peminjam";
@@ -61,6 +62,7 @@ const App = () => {
           <Route path="/data_buku" element={<DataBuku />} />
           <Route path="/tambah_buku" element={<TambahBuku />} />
           <Route path="/edit_buku/:id" element={<EditBuku />} />
+          <Route path="/lihat_buku/:id" element={<LihatBuku />} />
 
           {/* Peminjam */}
           <Route path="/data_peminjam" element={<DataPeminjam />} />
