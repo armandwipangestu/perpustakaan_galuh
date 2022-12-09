@@ -39,7 +39,7 @@ const DataPengembalian = () => {
           />
         </div>
       </section>
-      <section id="daftar_pengembalian">
+      <section id="daftar_pengembalian" className="pt-5">
         <div className="overflow-x-auto relative shadow-md sm:rounded-lg p-6">
           <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 rounded">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
