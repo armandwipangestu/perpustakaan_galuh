@@ -11,7 +11,7 @@ const Navigation = () => {
 
   return (
     <nav className="bg-white border-gray-200 px-4 sm:px-4 py-2.5 dark:bg-gray-900 shadow-sm">
-      <div className="justify-between px-1 mx-auto lg:max-w-7xl md:items-center md:flex md:px-5">
+      <div className="justify-between px-1 mx-auto lg:max-w-full md:items-center md:flex md:px-5">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <a href="/">
