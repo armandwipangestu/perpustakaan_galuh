@@ -41,7 +41,7 @@ const ListBooks = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
         {books
           .filter((val) => {
             if (search === "") {
@@ -67,7 +67,18 @@ const ListBooks = () => {
           .map((book, index) => {
             return (
               <React.Fragment key={index}>
-                <a
+                <div>
+                  <a href={`/lihat_buku/${book.id}`}>
+                    <img
+                      class="rounded"
+                      src={book.gambar}
+                      alt=""
+                      width="200"
+                      heigh="200"
+                    />
+                  </a>
+                </div>
+                {/* <a
                   href={`/edit_buku/${book.id}`}
                   className="flex flex-col bg-white rounded-md border md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
                 >
@@ -96,7 +107,7 @@ const ListBooks = () => {
                       Bahasa: {book.bahasa}
                     </p>
                   </div>
-                </a>
+                </a> */}
               </React.Fragment>
             );
           })}
